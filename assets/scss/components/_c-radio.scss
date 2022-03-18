@@ -1,0 +1,55 @@
+$width-radio: 30px;
+$color-no-check: #ccc;
+$color-check: red;
+$color-border-radio: #ccc;
+
+.c-radio{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+   &__input{
+       position: absolute;
+       left: 0;
+       top: 0;
+       width: 0;
+       height: 0;
+       overflow: hidden;
+       opacity: 0;
+
+       &:checked + i:before{
+        background: $color-check;
+        transform: scale(0.6)
+        }
+
+    }
+
+ 
+    i{
+        width: $width-radio;
+        height: $width-radio;
+        display: block;
+        border: solid 1px $color-border-radio;
+        border-radius: 60px;
+        margin-left: 8px;
+        position: relative;
+
+        &:before{
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            border-radius: 100%;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background: $color-no-check;
+            transition: all 0.25s ease; /* Todas las propiedades | tiempo | tipo movimiento */
+            transform: scale(0.5)/* Lo reducimos a 0*/ ;
+           
+        }
+    }
+}

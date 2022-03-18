@@ -1,0 +1,53 @@
+$color-select-text: #000;
+$background-select: #fff;
+$color-select-border: #000;
+$color-text-options: #000;
+
+.c-select{
+
+    &__selection{
+        width: 100%;
+        height: 30px;
+        border: solid 1px $color-select-border;
+        border-radius: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 7px;
+        z-index: 4;
+        position: relative;
+        color: $color-select-text;
+
+    }
+
+    &__container{
+        position: relative;
+
+    }
+
+    &__options{
+        position: absolute;
+        left: 0;
+        top: 30px;
+        display: none;
+        height: 300px;
+        width: 100%;
+        background: #fff;
+        z-index: 9;
+
+        li{
+            padding: 5px;
+            &:hover{
+                background-color: #ccc;
+            }
+        }
+    }
+
+    &__display{
+
+        .c-select__options{
+            display: block;
+        }
+
+    }
+}
